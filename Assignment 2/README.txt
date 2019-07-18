@@ -1,0 +1,1 @@
+To run "Assignment2.js", open "Assignment2.html" with a browser, inspect element, console.
