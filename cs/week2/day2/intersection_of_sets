@@ -1,0 +1,28 @@
+class Solution
+{
+public:
+	vector<int> intersection(vector<int>& nums1, vector<int>& nums2)
+	{
+		vector<int> intersect;
+		set<int> set1;
+		set<int> set2;
+
+		for (int i : nums1)
+		{
+			set1.insert(i);
+		}
+
+		for (int i : nums2)
+		{
+			set2.insert(i);
+		}
+
+		set_intersection(set1.begin(), set1.end(),
+			set2.begin(), set2.end(),
+			back_inserter(intersect));
+
+
+
+		return intersect;
+	}
+};
