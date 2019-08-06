@@ -1,0 +1,26 @@
+const express = require('express');
+const app = express();
+
+app.get(['/apple', '/ale'], function(request, response){
+    console.log(`got request for "/apple or /ale"`);
+    response.status(200).send('Apple  or Ale?');
+})
+
+app.get('/who+a+', function(request, response){
+    console.log(`got request for "/apple or /ale"`);
+    response.status(200).send('I  know, right?');
+})
+
+app.get('/:first/:last', function(request, response){
+    console.log(`got request for "/${request.params.first}"`);
+    response.status(200).send(`Hello  ${request.params.first} ${request.params.last}!`);
+})
+
+app.get('/*', function(request, response){
+    console.log(`got request for "No match"`);
+    response.status(200).send(`Nothing  was matched!`);
+})
+
+app.listen(3000, function() {
+    console.log('Example app listening on port 3000!');
+})
