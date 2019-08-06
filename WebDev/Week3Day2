@@ -16,6 +16,11 @@ app.get('/:first/:last', function(request, response){
     response.status(200).send(`Hello  ${request.params.first} ${request.params.last}!`);
 })
 
+app.get('/:word', function(request, response){
+    console.log(`got request for "/${request.params.word}"`);
+    response.status(200).send(`Reversed:  ${request.params.word.split("").reverse().join("")}`);
+})
+
 app.get('/*', function(request, response){
     console.log(`got request for "No match"`);
     response.status(200).send(`Nothing  was matched!`);
